@@ -663,6 +663,10 @@ fun HomeScreen(
     var bannerIndex by remember { mutableStateOf(0) }
 
     LaunchedEffect(Unit) {
+        viewModel.fetchProductsFromCloud()
+    }
+
+    LaunchedEffect(Unit) {
         while (true) {
             delay(3500)
             bannerIndex = (bannerIndex + 1) % BreadSweetData.PROMO_BANNERS.size
@@ -1078,6 +1082,10 @@ fun CategoriesScreen(
 ) {
     val context = LocalContext.current
     var activeCategoryIndex by remember { mutableStateOf(0) }
+
+    LaunchedEffect(Unit) {
+        viewModel.fetchProductsFromCloud()
+    }
     val categoriesList = BreadSweetData.CATEGORIES.filter { it != "Semua" }
 
     val filteredProducts = viewModel.products.filter { p ->
@@ -2171,6 +2179,7 @@ fun AdminDashboardScreen(
 
     LaunchedEffect(activeTab) {
         viewModel.fetchOrdersFromCloud()
+        viewModel.fetchProductsFromCloud()
     }
 
     // Admin Add/Edit states
@@ -2224,12 +2233,15 @@ fun AdminDashboardScreen(
 
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         IconButton(
-                            onClick = { viewModel.fetchOrdersFromCloud() },
+                            onClick = { 
+                                viewModel.fetchOrdersFromCloud()
+                                viewModel.fetchProductsFromCloud()
+                            },
                             modifier = Modifier
                                 .background(Color.White.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
                                 .size(36.dp)
                         ) {
-                            if (viewModel.isFetchingOrders) {
+                            if (viewModel.isFetchingOrders || viewModel.isFetchingProducts) {
                                 CircularProgressIndicator(color = Color.White, modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
                             } else {
                                 Icon(Icons.Default.Refresh, contentDescription = "Refresh", tint = Color.White, modifier = Modifier.size(18.dp))

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.breadsweet.app.data.BreadSweetData
 import com.breadsweet.app.data.OrderRepository
+import com.breadsweet.app.data.ProductRepository
 import com.breadsweet.app.model.*
 import kotlinx.coroutines.launch
 
@@ -75,6 +76,27 @@ class BreadSweetViewModel : ViewModel() {
         addAll(BreadSweetData.INITIAL_PRODUCTS)
     }
 
+    var isFetchingProducts by mutableStateOf(false)
+        private set
+
+    fun fetchProductsFromCloud() {
+        if (isFetchingProducts) return
+        isFetchingProducts = true
+        viewModelScope.launch {
+            try {
+                val cloudProducts = ProductRepository.getProducts()
+                if (cloudProducts.isNotEmpty()) {
+                    products.clear()
+                    products.addAll(cloudProducts)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                isFetchingProducts = false
+            }
+        }
+    }
+
     fun addProduct(
         name: String,
         category: String,
@@ -98,6 +120,11 @@ class BreadSweetViewModel : ViewModel() {
             isNew = true
         )
         products.add(0, newProduct)
+
+        // Sync to cloud
+        viewModelScope.launch {
+            ProductRepository.saveProducts(products.toList())
+        }
     }
 
     fun editProduct(
@@ -122,11 +149,21 @@ class BreadSweetViewModel : ViewModel() {
                 description = description,
                 stock = stock
             )
+
+            // Sync to cloud
+            viewModelScope.launch {
+                ProductRepository.saveProducts(products.toList())
+            }
         }
     }
 
     fun deleteProduct(id: Long) {
         products.removeAll { it.id == id }
+
+        // Sync to cloud
+        viewModelScope.launch {
+            ProductRepository.saveProducts(products.toList())
+        }
     }
 
     // --- Cart State ---
@@ -205,6 +242,7 @@ class BreadSweetViewModel : ViewModel() {
 
     init {
         fetchOrdersFromCloud()
+        fetchProductsFromCloud()
     }
 
     fun addOrder(customerName: String, itemsSummary: String, totalAmount: Double, deliveryMethod: String) {
