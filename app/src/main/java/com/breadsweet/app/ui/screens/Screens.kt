@@ -40,6 +40,20 @@ import com.breadsweet.app.model.*
 import com.breadsweet.app.ui.theme.*
 import com.breadsweet.app.viewmodel.BreadSweetViewModel
 import kotlinx.coroutines.delay
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+
+fun getProductImageModel(image: String): Any {
+    if (image.startsWith("data:image")) {
+        try {
+            val base64Data = image.substringAfter("base64,")
+            return android.util.Base64.decode(base64Data, android.util.Base64.DEFAULT)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    return image
+}
 
 // ==========================================
 // 1. LOGIN SCREEN
@@ -955,7 +969,7 @@ fun ProductCard(
                     .height(120.dp)
             ) {
                 AsyncImage(
-                    model = product.image,
+                    model = getProductImageModel(product.image),
                     contentDescription = product.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
@@ -1300,7 +1314,7 @@ fun CartItemRow(
     ) {
         Row(modifier = Modifier.padding(12.dp)) {
             AsyncImage(
-                model = item.product.image,
+                model = getProductImageModel(item.product.image),
                 contentDescription = item.product.name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -1700,7 +1714,7 @@ fun ProductDetailScreen(
                     .height(280.dp)
             ) {
                 AsyncImage(
-                    model = product.image,
+                    model = getProductImageModel(product.image),
                     contentDescription = product.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
@@ -2192,6 +2206,36 @@ fun AdminDashboardScreen(
     var formStock by remember { mutableStateOf("") }
     var formImage by remember { mutableStateOf("") }
 
+    val imagePickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetContent()
+    ) { uri ->
+        uri?.let {
+            try {
+                val inputStream = context.contentResolver.openInputStream(uri)
+                val originalBitmap = android.graphics.BitmapFactory.decodeStream(inputStream)
+                val maxDimension = 400
+                val width = originalBitmap.width
+                val height = originalBitmap.height
+                val (newWidth, newHeight) = if (width > height) {
+                    val ratio = width.toFloat() / maxDimension
+                    Pair(maxDimension, (height / ratio).toInt())
+                } else {
+                    val ratio = height.toFloat() / maxDimension
+                    Pair((width / ratio).toInt(), maxDimension)
+                }
+                val resizedBitmap = android.graphics.Bitmap.createScaledBitmap(originalBitmap, newWidth, newHeight, true)
+                val outputStream = java.io.ByteArrayOutputStream()
+                resizedBitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, 75, outputStream)
+                val bytes = outputStream.toByteArray()
+                val base64String = "data:image/jpeg;base64," + android.util.Base64.encodeToString(bytes, android.util.Base64.NO_WRAP)
+                formImage = base64String
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Gagal memproses gambar", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     // Admin filters
     var orderSearchQuery by remember { mutableStateOf("") }
     var orderStatusFilter by remember { mutableStateOf("semua") } // "semua", "pending", "diproses", "selesai"
@@ -2465,7 +2509,7 @@ fun AdminDashboardScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     AsyncImage(
-                                        model = product.image,
+                                        model = getProductImageModel(product.image),
                                         contentDescription = product.name,
                                         contentScale = ContentScale.Crop,
                                         modifier = Modifier
@@ -2539,7 +2583,7 @@ fun AdminDashboardScreen(
                                 ) {
                                     Row(modifier = Modifier.padding(12.dp)) {
                                         AsyncImage(
-                                            model = product.image,
+                                            model = getProductImageModel(product.image),
                                             contentDescription = product.name,
                                             contentScale = ContentScale.Crop,
                                             modifier = Modifier
@@ -2904,14 +2948,41 @@ fun AdminDashboardScreen(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
 
-                    OutlinedTextField(
-                        value = formImage,
-                        onValueChange = { formImage = it },
-                        label = { Text("Link Image URL") },
-                        placeholder = { Text("http://...") },
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text("Foto Roti", fontWeight = FontWeight.SemiBold, color = DarkGray, fontSize = 14.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Row(
                         modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(10.dp)
-                    )
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(80.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(BorderColor)
+                                .border(1.dp, MediumGray.copy(alpha = 0.2f), RoundedCornerShape(12.dp)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            if (formImage.isNotEmpty()) {
+                                AsyncImage(
+                                    model = getProductImageModel(formImage),
+                                    contentDescription = "Preview Roti",
+                                    contentScale = ContentScale.Crop,
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            } else {
+                                Text("No Image", color = MediumGray, fontSize = 10.sp, textAlign = TextAlign.Center)
+                            }
+                        }
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Button(
+                            onClick = { imagePickerLauncher.launch("image/*") },
+                            colors = ButtonDefaults.buttonColors(containerColor = Amber600),
+                            shape = RoundedCornerShape(10.dp)
+                        ) {
+                            Text("Pilih Foto", fontSize = 12.sp)
+                        }
+                    }
 
                     Spacer(modifier = Modifier.height(20.dp))
 
