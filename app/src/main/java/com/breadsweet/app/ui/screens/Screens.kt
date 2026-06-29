@@ -1391,6 +1391,10 @@ fun ProfileScreen(
     var isEditing by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
+    LaunchedEffect(Unit) {
+        viewModel.fetchOrdersFromCloud()
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -1507,12 +1511,28 @@ fun ProfileScreen(
 
             // Order History Header
             item {
-                Text(
-                    text = "Riwayat Pesanan",
-                    fontWeight = FontWeight.Bold,
-                    color = Amber800,
-                    fontSize = 15.sp
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Riwayat Pesanan",
+                        fontWeight = FontWeight.Bold,
+                        color = Amber800,
+                        fontSize = 15.sp
+                    )
+                    IconButton(
+                        onClick = { viewModel.fetchOrdersFromCloud() },
+                        modifier = Modifier.size(24.dp)
+                    ) {
+                        if (viewModel.isFetchingOrders) {
+                            CircularProgressIndicator(color = Amber800, modifier = Modifier.size(14.dp), strokeWidth = 2.dp)
+                        } else {
+                            Icon(Icons.Default.Refresh, contentDescription = "Refresh", tint = Amber800, modifier = Modifier.size(16.dp))
+                        }
+                    }
+                }
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
@@ -2149,6 +2169,10 @@ fun AdminDashboardScreen(
     val user = viewModel.currentUser ?: return
     val context = LocalContext.current
 
+    LaunchedEffect(activeTab) {
+        viewModel.fetchOrdersFromCloud()
+    }
+
     // Admin Add/Edit states
     var showProductDialog by remember { mutableStateOf(false) }
     var editingProduct by remember { mutableStateOf<Product?>(null) }
@@ -2198,18 +2222,33 @@ fun AdminDashboardScreen(
                         Text(user.name, color = Amber100, fontSize = 12.sp)
                     }
 
-                    Button(
-                        onClick = {
-                            viewModel.logout()
-                            onNavigateToLogin()
-                        },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.White.copy(alpha = 0.15f)),
-                        shape = RoundedCornerShape(10.dp),
-                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
-                    ) {
-                        Icon(Icons.Default.ExitToApp, contentDescription = "Logout", tint = Color.White, modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text("Keluar", color = Color.White, fontSize = 11.sp)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        IconButton(
+                            onClick = { viewModel.fetchOrdersFromCloud() },
+                            modifier = Modifier
+                                .background(Color.White.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
+                                .size(36.dp)
+                        ) {
+                            if (viewModel.isFetchingOrders) {
+                                CircularProgressIndicator(color = Color.White, modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
+                            } else {
+                                Icon(Icons.Default.Refresh, contentDescription = "Refresh", tint = Color.White, modifier = Modifier.size(18.dp))
+                            }
+                        }
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Button(
+                            onClick = {
+                                viewModel.logout()
+                                onNavigateToLogin()
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.White.copy(alpha = 0.15f)),
+                            shape = RoundedCornerShape(10.dp),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Icon(Icons.Default.ExitToApp, contentDescription = "Logout", tint = Color.White, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("Keluar", color = Color.White, fontSize = 11.sp)
+                        }
                     }
                 }
 

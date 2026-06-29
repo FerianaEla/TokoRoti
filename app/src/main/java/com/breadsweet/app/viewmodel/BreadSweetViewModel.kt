@@ -5,8 +5,11 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.breadsweet.app.data.BreadSweetData
+import com.breadsweet.app.data.OrderRepository
 import com.breadsweet.app.model.*
+import kotlinx.coroutines.launch
 
 class BreadSweetViewModel : ViewModel() {
 
@@ -179,6 +182,31 @@ class BreadSweetViewModel : ViewModel() {
         )
     }
 
+    var isFetchingOrders by mutableStateOf(false)
+        private set
+
+    fun fetchOrdersFromCloud() {
+        if (isFetchingOrders) return
+        isFetchingOrders = true
+        viewModelScope.launch {
+            try {
+                val cloudOrders = OrderRepository.getOrders()
+                if (cloudOrders.isNotEmpty()) {
+                    orders.clear()
+                    orders.addAll(cloudOrders)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                isFetchingOrders = false
+            }
+        }
+    }
+
+    init {
+        fetchOrdersFromCloud()
+    }
+
     fun addOrder(customerName: String, itemsSummary: String, totalAmount: Double, deliveryMethod: String) {
         val calendar = java.util.Calendar.getInstance()
         val hour = String.format("%02d", calendar.get(java.util.Calendar.HOUR_OF_DAY))
@@ -199,12 +227,22 @@ class BreadSweetViewModel : ViewModel() {
             method = deliveryMethod
         )
         orders.add(0, order)
+
+        // Sync to cloud
+        viewModelScope.launch {
+            OrderRepository.saveOrders(orders.toList())
+        }
     }
 
     fun updateOrderStatus(orderId: String, newStatus: String) {
         val index = orders.indexOfFirst { it.id == orderId }
         if (index != -1) {
             orders[index] = orders[index].copy(status = newStatus)
+
+            // Sync to cloud
+            viewModelScope.launch {
+                OrderRepository.saveOrders(orders.toList())
+            }
         }
     }
 
