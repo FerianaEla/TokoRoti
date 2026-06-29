@@ -108,9 +108,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] D:\AndroidSDK\.gradle\cache
 	tools:targetApi
 		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:14:9-29
 	android:roundIcon
-		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:11:9-63
+		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:11:9-43
 	android:icon
-		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:9:9-58
+		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:9:9-38
 	android:allowBackup
 		ADDED from D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
