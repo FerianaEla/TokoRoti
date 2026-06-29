@@ -44,7 +44,7 @@ import kotlinx.coroutines.delay
 // ==========================================
 // 1. LOGIN SCREEN
 // ==========================================
-@OptIn(Material3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     viewModel: BreadSweetViewModel,
@@ -319,7 +319,7 @@ fun LoginScreen(
 // ==========================================
 // 2. REGISTER SCREEN
 // ==========================================
-@OptIn(Material3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegisterScreen(
     viewModel: BreadSweetViewModel,
@@ -535,6 +535,7 @@ fun RegisterScreen(
 // ==========================================
 // 3. MAIN CONTAINER SCREEN (CUSTOMER TABS)
 // ==========================================
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     viewModel: BreadSweetViewModel,
@@ -651,7 +652,7 @@ fun MainScreen(
 // ==========================================
 // 4. HOME TAB
 // ==========================================
-@OptIn(Material3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     viewModel: BreadSweetViewModel,
@@ -691,7 +692,7 @@ fun HomeScreen(
             Column {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Companion.SpaceBetween,
+                    horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column {
@@ -1377,7 +1378,7 @@ fun CartItemRow(
 // ==========================================
 // 7. PROFILE TAB
 // ==========================================
-@OptIn(Material3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     viewModel: BreadSweetViewModel,
