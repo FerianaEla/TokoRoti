@@ -1,4 +1,4 @@
-#Mon Jun 29 13:07:28 WIB 2026
+#Mon Jun 29 13:30:56 WIB 2026
 base.0=D\:\\Daftar Mata Kuliah\\Mobile Programming Sem.6\\Toko Roti Aplikasi (1)\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\Daftar Mata Kuliah\\Mobile Programming Sem.6\\Toko Roti Aplikasi (1)\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=D\:\\Daftar Mata Kuliah\\Mobile Programming Sem.6\\Toko Roti Aplikasi (1)\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
