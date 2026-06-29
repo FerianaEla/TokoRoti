@@ -40,7 +40,7 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun BreadSweetTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
