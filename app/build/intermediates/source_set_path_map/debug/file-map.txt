@@ -1,0 +1,55 @@
+com.breadsweet.app-jetified-animation-release-0 D:\AndroidSDK\.gradle\caches\transforms-3\02f3aba1e800a8ea7c6ff303ce49a04e\transformed\jetified-animation-release\res
+com.breadsweet.app-jetified-foundation-release-1 D:\AndroidSDK\.gradle\caches\transforms-3\0587bfeaa80fc72ecdeebb94b216e7c4\transformed\jetified-foundation-release\res
+com.breadsweet.app-jetified-runtime-saveable-release-2 D:\AndroidSDK\.gradle\caches\transforms-3\0853a7eb51dfa7fc95ad13f55b21c778\transformed\jetified-runtime-saveable-release\res
+com.breadsweet.app-jetified-core-ktx-1.12.0-3 D:\AndroidSDK\.gradle\caches\transforms-3\0b94acd9bb8ee35ef77c374cdb317899\transformed\jetified-core-ktx-1.12.0\res
+com.breadsweet.app-jetified-profileinstaller-1.3.1-4 D:\AndroidSDK\.gradle\caches\transforms-3\10b94503e7bfc0ef911c5d8e8a7cc3a5\transformed\jetified-profileinstaller-1.3.1\res
+com.breadsweet.app-lifecycle-viewmodel-2.7.0-5 D:\AndroidSDK\.gradle\caches\transforms-3\11815480b93185a6c7921a369e360c7b\transformed\lifecycle-viewmodel-2.7.0\res
+com.breadsweet.app-jetified-material-ripple-release-6 D:\AndroidSDK\.gradle\caches\transforms-3\12132c3b27cf42a80f0cb4420f90b4a4\transformed\jetified-material-ripple-release\res
+com.breadsweet.app-jetified-lifecycle-runtime-ktx-2.7.0-7 D:\AndroidSDK\.gradle\caches\transforms-3\162a61c8980eaf917c48322ade92409b\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.breadsweet.app-lifecycle-livedata-core-2.7.0-8 D:\AndroidSDK\.gradle\caches\transforms-3\1b4814fa55b83f5331fcbc7ec68cd1eb\transformed\lifecycle-livedata-core-2.7.0\res
+com.breadsweet.app-jetified-runtime-release-9 D:\AndroidSDK\.gradle\caches\transforms-3\1f55ad441db63e2fc41d31176928e18c\transformed\jetified-runtime-release\res
+com.breadsweet.app-jetified-ui-text-release-10 D:\AndroidSDK\.gradle\caches\transforms-3\22cf0b9371f1745d2a528b3e19299a43\transformed\jetified-ui-text-release\res
+com.breadsweet.app-jetified-lifecycle-process-2.7.0-11 D:\AndroidSDK\.gradle\caches\transforms-3\2dc7f10b86599e8fa9ea4e8e5e5aa557\transformed\jetified-lifecycle-process-2.7.0\res
+com.breadsweet.app-jetified-emoji2-1.3.0-12 D:\AndroidSDK\.gradle\caches\transforms-3\2f9012f81061328e9297e32114accfab\transformed\jetified-emoji2-1.3.0\res
+com.breadsweet.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-13 D:\AndroidSDK\.gradle\caches\transforms-3\317a635521371847bfe8380241803048\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.breadsweet.app-jetified-lifecycle-viewmodel-ktx-2.7.0-14 D:\AndroidSDK\.gradle\caches\transforms-3\444cf98d6fdd531c35531de0ac4c4241\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.breadsweet.app-jetified-coil-base-2.6.0-15 D:\AndroidSDK\.gradle\caches\transforms-3\4d62b20fb782589cdab1a9c8d63aa23c\transformed\jetified-coil-base-2.6.0\res
+com.breadsweet.app-jetified-appcompat-resources-1.6.1-16 D:\AndroidSDK\.gradle\caches\transforms-3\51e539d489d24e73ef6835e26652956e\transformed\jetified-appcompat-resources-1.6.1\res
+com.breadsweet.app-jetified-material3-1.1.2-17 D:\AndroidSDK\.gradle\caches\transforms-3\5452d15e10d355687fe9bed527169b13\transformed\jetified-material3-1.1.2\res
+com.breadsweet.app-jetified-ui-util-release-18 D:\AndroidSDK\.gradle\caches\transforms-3\57c242bbe39c1dfb6f9686c0ca2903dc\transformed\jetified-ui-util-release\res
+com.breadsweet.app-jetified-ui-tooling-preview-release-19 D:\AndroidSDK\.gradle\caches\transforms-3\69020b350149cbfe80173f447b4a7c51\transformed\jetified-ui-tooling-preview-release\res
+com.breadsweet.app-jetified-ui-unit-release-20 D:\AndroidSDK\.gradle\caches\transforms-3\6fae90c1fac78a68cb1e9e4581d3ff3b\transformed\jetified-ui-unit-release\res
+com.breadsweet.app-jetified-savedstate-1.2.1-21 D:\AndroidSDK\.gradle\caches\transforms-3\754549493495170d0fa3bf23132e024c\transformed\jetified-savedstate-1.2.1\res
+com.breadsweet.app-jetified-animation-core-release-22 D:\AndroidSDK\.gradle\caches\transforms-3\7683900ffee154d6a58e7a20aefaf418\transformed\jetified-animation-core-release\res
+com.breadsweet.app-jetified-lifecycle-viewmodel-compose-2.7.0-23 D:\AndroidSDK\.gradle\caches\transforms-3\77a51cc5c9ebd723f559f59a2006cdf5\transformed\jetified-lifecycle-viewmodel-compose-2.7.0\res
+com.breadsweet.app-jetified-ui-geometry-release-24 D:\AndroidSDK\.gradle\caches\transforms-3\78c69207994f3d4f9d5ea6188cbd3eff\transformed\jetified-ui-geometry-release\res
+com.breadsweet.app-navigation-runtime-ktx-2.7.7-25 D:\AndroidSDK\.gradle\caches\transforms-3\7c6510befd84ca77090733584ae540b4\transformed\navigation-runtime-ktx-2.7.7\res
+com.breadsweet.app-jetified-customview-poolingcontainer-1.0.0-26 D:\AndroidSDK\.gradle\caches\transforms-3\883fa8fbdf2b4b5d7efdee6d3e2f5ce0\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.breadsweet.app-jetified-startup-runtime-1.1.1-27 D:\AndroidSDK\.gradle\caches\transforms-3\8c31b37f5fa7835c17f0d8162c0abcff\transformed\jetified-startup-runtime-1.1.1\res
+com.breadsweet.app-jetified-ui-graphics-release-28 D:\AndroidSDK\.gradle\caches\transforms-3\922733cdee83ee5de0f2fb48b1b4534f\transformed\jetified-ui-graphics-release\res
+com.breadsweet.app-navigation-common-ktx-2.7.7-29 D:\AndroidSDK\.gradle\caches\transforms-3\968f9ae5966d28cd4d12acb99a48ecf5\transformed\navigation-common-ktx-2.7.7\res
+com.breadsweet.app-jetified-activity-compose-1.8.2-30 D:\AndroidSDK\.gradle\caches\transforms-3\a55ed7e08600cfcb2cd62848bdd3dd9e\transformed\jetified-activity-compose-1.8.2\res
+com.breadsweet.app-jetified-navigation-compose-2.7.7-31 D:\AndroidSDK\.gradle\caches\transforms-3\b02cbb04b78976f4e1f4bd0ffdfd9d41\transformed\jetified-navigation-compose-2.7.7\res
+com.breadsweet.app-jetified-foundation-layout-release-32 D:\AndroidSDK\.gradle\caches\transforms-3\b13c92cf0900ef5b4bd0feca573e7d19\transformed\jetified-foundation-layout-release\res
+com.breadsweet.app-lifecycle-runtime-2.7.0-33 D:\AndroidSDK\.gradle\caches\transforms-3\ba62a93f8e1f15afc4a31b56aa5956d1\transformed\lifecycle-runtime-2.7.0\res
+com.breadsweet.app-jetified-savedstate-ktx-1.2.1-34 D:\AndroidSDK\.gradle\caches\transforms-3\bd5c17c9bca0d7c7f6999acc8703aa64\transformed\jetified-savedstate-ktx-1.2.1\res
+com.breadsweet.app-jetified-ui-test-manifest-1.6.1-35 D:\AndroidSDK\.gradle\caches\transforms-3\c836dd470a676e05505fb3e1f80c8ef9\transformed\jetified-ui-test-manifest-1.6.1\res
+com.breadsweet.app-jetified-ui-tooling-release-36 D:\AndroidSDK\.gradle\caches\transforms-3\c8a10cf60b5759bdbf46bc275e01824d\transformed\jetified-ui-tooling-release\res
+com.breadsweet.app-navigation-common-2.7.7-37 D:\AndroidSDK\.gradle\caches\transforms-3\ca3858c9be36a3f3d840844e2e7c6895\transformed\navigation-common-2.7.7\res
+com.breadsweet.app-jetified-material-icons-core-release-38 D:\AndroidSDK\.gradle\caches\transforms-3\ce31a8e645b24dac7de17ecb788e2089\transformed\jetified-material-icons-core-release\res
+com.breadsweet.app-jetified-activity-ktx-1.8.2-39 D:\AndroidSDK\.gradle\caches\transforms-3\d48879a3a4ae0d4f2856b8a10eb5d690\transformed\jetified-activity-ktx-1.8.2\res
+com.breadsweet.app-jetified-material-icons-extended-release-40 D:\AndroidSDK\.gradle\caches\transforms-3\d550082e8b9495d640aeacdcc41295cd\transformed\jetified-material-icons-extended-release\res
+com.breadsweet.app-navigation-runtime-2.7.7-41 D:\AndroidSDK\.gradle\caches\transforms-3\d805a6191cbe0a7d5b798f5108bd8a10\transformed\navigation-runtime-2.7.7\res
+com.breadsweet.app-jetified-ui-release-42 D:\AndroidSDK\.gradle\caches\transforms-3\da3d3bb1639df073d53c7b7fc2ae614f\transformed\jetified-ui-release\res
+com.breadsweet.app-core-1.12.0-43 D:\AndroidSDK\.gradle\caches\transforms-3\e08d0895477450a4d5bff992603cf0ae\transformed\core-1.12.0\res
+com.breadsweet.app-core-runtime-2.2.0-44 D:\AndroidSDK\.gradle\caches\transforms-3\e14ed20f9d31fd62f92ca816ef135758\transformed\core-runtime-2.2.0\res
+com.breadsweet.app-jetified-activity-1.8.2-45 D:\AndroidSDK\.gradle\caches\transforms-3\faab1d474aeea59cc8fe736f84792520\transformed\jetified-activity-1.8.2\res
+com.breadsweet.app-jetified-annotation-experimental-1.3.0-46 D:\AndroidSDK\.gradle\caches\transforms-3\fcb66b496a9632ac165b23a276b31dc4\transformed\jetified-annotation-experimental-1.3.0\res
+com.breadsweet.app-jetified-ui-tooling-data-release-47 D:\AndroidSDK\.gradle\caches\transforms-3\fcd44d826e7df409a9057b95ee47884a\transformed\jetified-ui-tooling-data-release\res
+com.breadsweet.app-jetified-material-release-48 D:\AndroidSDK\.gradle\caches\transforms-3\fd17f7191974508a11e680313785fbb7\transformed\jetified-material-release\res
+com.breadsweet.app-resValues-49 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\build\generated\res\resValues\debug
+com.breadsweet.app-packageDebugResources-50 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.breadsweet.app-packageDebugResources-51 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.breadsweet.app-merged_res-52 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\build\intermediates\merged_res\debug
+com.breadsweet.app-debug-53 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\debug\res
+com.breadsweet.app-main-54 D:\Daftar Mata Kuliah\Mobile Programming Sem.6\Toko Roti Aplikasi (1)\app\src\main\res
