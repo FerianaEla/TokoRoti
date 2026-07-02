@@ -746,7 +746,7 @@ fun HomeScreen(
                 OutlinedTextField(
                     value = viewModel.searchQuery,
                     onValueChange = { viewModel.searchQuery = it },
-                    placeholder = { Text("Cari roti favoritmu...", fontSize = 13.sp, color = Amber100.copy(alpha = 0.8f)) },
+                    placeholder = { Text("Cari roti favoritmu...", fontSize = 13.sp, color = MediumGray.copy(alpha = 0.7f)) },
                     leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Search", tint = Amber500) },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(16.dp),
