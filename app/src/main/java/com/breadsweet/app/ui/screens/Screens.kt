@@ -71,7 +71,6 @@ fun LoginScreen(
     var showPassword by remember { mutableStateOf(false) }
     var errorMsg by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
-    val context = LocalContext.current
 
     LaunchedEffect(isLoading) {
         if (isLoading) {
@@ -182,7 +181,7 @@ fun LoginScreen(
                         leadingIcon = { Icon(Icons.Default.Email, contentDescription = "Email", tint = Amber600) },
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                        colors = OutlinedTextFieldDefaults.colors(
                             focusedBorderColor = Amber600,
                             unfocusedBorderColor = BorderColor
                         ),
@@ -210,7 +209,7 @@ fun LoginScreen(
                         visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                        colors = OutlinedTextFieldDefaults.colors(
                             focusedBorderColor = Amber600,
                             unfocusedBorderColor = BorderColor
                         ),
@@ -436,7 +435,7 @@ fun RegisterScreen(
                         leadingIcon = { Icon(Icons.Default.Person, contentDescription = "Name", tint = Amber600) },
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                        colors = OutlinedTextFieldDefaults.colors(
                             focusedBorderColor = Amber600,
                             unfocusedBorderColor = BorderColor
                         ),
@@ -453,7 +452,7 @@ fun RegisterScreen(
                         leadingIcon = { Icon(Icons.Default.Email, contentDescription = "Email", tint = Amber600) },
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                        colors = OutlinedTextFieldDefaults.colors(
                             focusedBorderColor = Amber600,
                             unfocusedBorderColor = BorderColor
                         ),
@@ -481,7 +480,7 @@ fun RegisterScreen(
                         visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                        colors = OutlinedTextFieldDefaults.colors(
                             focusedBorderColor = Amber600,
                             unfocusedBorderColor = BorderColor
                         ),
@@ -750,8 +749,9 @@ fun HomeScreen(
                     leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Search", tint = Amber500) },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(16.dp),
-                    colors = TextFieldDefaults.outlinedTextFieldColors(
-                        containerColor = Color.White,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White,
                         focusedBorderColor = Color.Transparent,
                         unfocusedBorderColor = Color.Transparent
                     ),
