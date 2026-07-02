@@ -86,8 +86,16 @@ class BreadSweetViewModel : ViewModel() {
             try {
                 val cloudProducts = ProductRepository.getProducts()
                 if (cloudProducts.isNotEmpty()) {
+                    val cloudIds = cloudProducts.map { it.id }.toSet()
+                    val missingLocal = BreadSweetData.INITIAL_PRODUCTS.filter { it.id !in cloudIds }
+                    
                     products.clear()
                     products.addAll(cloudProducts)
+                    
+                    if (missingLocal.isNotEmpty()) {
+                        products.addAll(missingLocal)
+                        ProductRepository.saveProducts(products.toList())
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
